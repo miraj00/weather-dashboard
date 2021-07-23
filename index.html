@@ -4,10 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Bootstrap CSS link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
 </head>
 <body>
+    <header><h1>Weather Dashboard</h1></header>
     
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-3">
+          <div class="card">
+              <form id="search-form" class="card-body">
+              <label class="form-label" for="city">Search for a City:</label>
+              <input name="city" id="cityname" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn">Search</button>
+            </form>
+          </div>
+        
+        
+        
+        
+        
+        
+        </div> 
+    <!--
+          <div class="card">
+            <h3 class="card-header text-uppercase">Search By Topic</h3>
+            <div id="language-buttons" class="card-body">
+              <button data-language="javascript" class="btn">JavaScript</button>
+              <button data-language="html" class="btn">HTML</button>
+              <button data-language="css" class="btn">CSS</button>
+            </div>
+          </div>
+        </div>
+    -->
+        <div class="col-12 col-md-9">
+            <div class="container">
+                <div class="row">
+                   <div class="col-12">
+                    <div class="card text-dark bg-light mb-3" style="width:100%">
+                        <div class="card-body">
+                          <h5 class="card-title">Piscataway (7/22/2021) </h5>
+                          <p class="card-text">temp   <br> Wind  <br> Humidity   <br> UV Index  </p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+            <div> 5-Day Forecast :</div>   
+             
+                <div class="row justify-content-evenly">
+                 <div class="col-2"><div class="card text-dark bg-light mb-3 style=max-width: 18rem">
+                      <div class="card-body">
+                      <h5 class="card-title">Date</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div> 
+                </div>
+                <div class="col-2"><div class="card text-dark bg-light mb-3" style="width:100%">
+                      <div class="card-body">
+                      <h5 class="card-title">Date</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div> 
+                </div>
+                <div class="col-2"><div class="card text-dark bg-light mb-3" style="width:100%">
+                    <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div> 
+              </div>
+              <div class="col-2"><div class="card text-dark bg-light mb-3" style="width:100%">
+                <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div> 
+          </div>
+          <div class="col-2"><div class="card text-dark bg-light mb-3" style="width:100%">
+            <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div> 
+      </div>                        
+
+                  
+                </div>
+            </div>
+        </div>
+        
+    </main>
+   
+
+
+    <script src="./assets/js/script.js"></script>   
 </body>
 
 

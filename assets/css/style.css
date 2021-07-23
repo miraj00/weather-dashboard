@@ -1,0 +1,75 @@
+header {
+    background: rgb(62, 108, 207);
+    position:sticky;
+    top: 0;
+  
+    z-index: 9999;
+    height: 80px;
+    
+    text-align: center;
+    font-size: 30px;
+    color:rgb(253, 252, 252);
+  }
+  .card {
+      background :rgb(247, 247, 248);
+      border-color: 5px black;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .justify-space-between {
+    justify-content: space-between;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    text-decoration:none;
+    padding: 6px 5px;
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border-radius: .2rem;
+    color: #e0e7e2;
+    border: none;
+    outline: none;
+    background-color: rgb(70, 180, 231);
+    box-shadow: 3px 3px #4d413e;
+    transform: translate(-1px, -1px);
+  }
+  
+   .btn:hover {
+    color: #0c4a91;
+    background-color: #91a1a1;
+    transform: translate(0, 0);
+    box-shadow: 2px 2px rgb(78, 65, 65);
+  }
+  
+  .btn-inline {
+    display: inline;
+  }
+
+  .form-input, .form-label {
+  display: block;
+}
+
+.form-label {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+  }
+
+.form-input {
+    width: 100%;
+    padding: 3%;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: .3rem;
+  }
+  .align-stretch {
+    align-items: stretch;
+  }
+  
