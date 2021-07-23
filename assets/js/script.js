@@ -6,7 +6,7 @@ var cityIdCounter = 0;
 
 
 
-function myFunction(){
+function myFunction(event){
 
     
    
@@ -19,10 +19,10 @@ function myFunction(){
     var citylistEl = document.createElement("li");
     citylistEl.className = "citys";
     citylistEl.setAttribute("city-id", cityIdCounter);
-    citylistEl.textContent = cityName.value;
+    citylistEl.innerHTML = cityName.value;
     cityContainerEl.appendChild(citylistEl);
 
-    cityIdCounter++; 
+   cityIdCounter++; 
 
     var data0 = localStorage.getItem("city");
     console.log(data0);
@@ -33,7 +33,7 @@ function myFunction(){
     citys.appendChild(data0);
      
 
-
+    event.preventDefault();
 
 
 
