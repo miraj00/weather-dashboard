@@ -1,4 +1,4 @@
-var cityName = document.querySelector('#cityname').value;
+var cityName = document.querySelector('#cityname');
 var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
 
@@ -14,13 +14,13 @@ function myFunction(){
 
 // Store it in local storage and add City name in the list as a button ( so upon clicking it it will fetch data of that city ) 
 
-    localStorage.setItem ("city", cityName);
+    localStorage.setItem ("city", cityName.value);
 
     var citylistEl = document.createElement("li");
     citylistEl.className = "citys";
     citylistEl.setAttribute("city-id", cityIdCounter);
-    citylistEl.textContent = cityName;
-    cityContainerEl.appendChild.citylistEl();
+    citylistEl.textContent = cityName.value;
+    cityContainerEl.appendChild(citylistEl);
 
     cityIdCounter++; 
 
