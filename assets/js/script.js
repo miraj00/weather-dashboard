@@ -11,7 +11,7 @@ function updateFunction() {
 
 // upon clicking history tab, city name from it gets added to input field and button click function proceeds
 
-var cityVal = document.querySelector(city-id.textContent);
+var cityVal = document.querySelector(cityClickedName.value);
    console.log(cityVal); 
 cityVal = ('#cityname').value;
 
