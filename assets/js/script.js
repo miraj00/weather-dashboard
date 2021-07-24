@@ -1,19 +1,22 @@
 var cityName = document.querySelector('#cityname');
 console.log(cityName);
-
 var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
-
+var cityClickedName = document.querySelector ("#city-id");
 //--------------------------------------------------------------------------------------------------
+
+cityContainerEl.addEventListener('click', updateFunction);
+
 function updateFunction() {
 
-   // upon clicking history tab, city name from it gets added as x
-   // task text was clicked
+// upon clicking history tab, city name from it gets added to input field and button click function proceeds
 
-var cityVal = document.querySelector(citys[i].value);
-  cityVal = x;
-    weatherdataFetchtoday();
-    weatherdataFetch5Days();
+var cityVal = document.querySelector(city-id.textContent);
+   console.log(cityVal); 
+cityVal = ('#cityname').value;
+
+    myFunction(event);
+    
 }
 
 //then it updates all weather data
@@ -22,16 +25,12 @@ var cityVal = document.querySelector(citys[i].value);
 //    citylistEl.innerHTML = cityName.value;
 //    localStorage.setItem ("tasks1", cityName);
 //    cityName = x;
-  
-cityContainerEl.addEventListener('click', updateFunction); 
 
 //-----------------------------------------------------------------------------------------------------
 function myFunction(event)  {
     event.preventDefault(); 
 
-// Store it in local storage and add City name in the list as a button
-// ( so upon clicking it it will fetch data of that city ) --------------------
-
+// Store it in local storage and add City name in the list as a button ( so upon clicking it it will fetch data of that city ) --------------------
     localStorage.setItem ("city", cityName.value);
 
     var citylistEl = document.createElement("li");
