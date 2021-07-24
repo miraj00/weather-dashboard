@@ -4,19 +4,28 @@ console.log(cityName);
 var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
 
+//--------------------------------------------------------------------------------------------------
+function updateFunction() {
 
-citys.addEventListener('click', myFunction()); 
-  myFunction() {
-    localStorage.setItem ("tasks1", cityName);
-    cityName = x;
-    document.getElementById("#cityname").innerHTML = cityName;
+   // upon clicking history tab, city name from it gets added as x
+   // task text was clicked
+
+var cityVal = document.querySelector(citys[i].value);
+  cityVal = x;
     weatherdataFetchtoday();
     weatherdataFetch5Days();
 }
 
+//then it updates all weather data
 
+//    document.getElementById("#cityname").innerHTML = cityName;
+//    citylistEl.innerHTML = cityName.value;
+//    localStorage.setItem ("tasks1", cityName);
+//    cityName = x;
+  
+cityContainerEl.addEventListener('click', updateFunction); 
 
-
+//-----------------------------------------------------------------------------------------------------
 function myFunction(event)  {
     event.preventDefault(); 
 
@@ -29,7 +38,7 @@ function myFunction(event)  {
     citylistEl.className = "citys";
     citylistEl.setAttribute("city-id", cityIdCounter);
     citylistEl.innerHTML = cityName.value;
-    
+    cityIdCounter++
     cityContainerEl.appendChild(citylistEl);
    
 
@@ -94,9 +103,9 @@ function weatherdataFetchtoday() {
 
     var UVI = dataUV.current.uvi;
     console.log(UVI);
-     if (UVI > 3 ) {
+     if (UVI < 3 ) {
         uvIndexNow.style.backgroundColor= "rgb(97, 211, 240)";
-     } else if (UVI < 6) {
+     } else if (UVI >=3 & UVI <=6) {
         uvIndexNow.style.backgroundColor= "rgb(218, 231, 31)";
      } else {
         uvIndexNow.style.backgroundColor= "rgb(245, 8, 8)";
