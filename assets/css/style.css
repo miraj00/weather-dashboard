@@ -72,7 +72,14 @@ header {
   .align-stretch {
     align-items: stretch;
   }
-  
+  .citylist {
+font-size: 20px;
+text-align: center;
+padding-top: 30px;
+
+
+  }
+
   .citys {
     font-size: 1.5rem;
     text-align: center;
@@ -90,9 +97,9 @@ header {
     box-shadow: 3px 3px #4d413e;
     transform: translate(-1px, -1px);
     list-style-type: none;
-
   }
 
+ 
   ul {
     display: block;
     list-style-type: disc;
@@ -124,6 +131,9 @@ header {
   color: white;
 }
 
+div.card {
+  border-top: 2px solid black;
+}
 
 h2.card-title {
   padding-top: 40px;
@@ -143,6 +153,10 @@ h2.card-title, .card-title, #iconDay0, #tempNow, #windNow, #humidityNow, #uvInde
   width: 100%;
    padding-right: 0px; 
   padding-left: 0px; 
+}
+
+div.col-3 {
+  padding-left:40px;
 }
 
 div.card-body-1 {
