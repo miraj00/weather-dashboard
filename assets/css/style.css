@@ -73,3 +73,22 @@ header {
     align-items: stretch;
   }
   
+  .citys {
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration:none;
+    padding: 6px 50px;
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: .2rem;
+    color: #e0e7e2;
+    border: none;
+    outline: none;
+    background-color: rgb(141, 149, 153);
+    box-shadow: 3px 3px #4d413e;
+    transform: translate(-1px, -1px);
+    list-style-type: none;
+
+  }

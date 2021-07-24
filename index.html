@@ -18,7 +18,7 @@
               <form id="search-form" class="card-body">
               <label class="form-label" for="city">Search for a City:</label>
               <input name="city" id="cityname" type="text" autofocus="true" class="form-input" />
-              <button onclick="myFunction()" class="btn">Search</button>
+              <button onclick="myFunction(event)" class="btn">Search</button>
               </form>
           
           <div class="card">
@@ -28,29 +28,22 @@
           </div>
             
          </div> 
-  
-  
-  
-  
-         <!--
-          <div class="card">
-            <h3 class="card-header text-uppercase">Search By Topic</h3>
-            <div id="language-buttons" class="card-body">
-              <button data-language="javascript" class="btn">JavaScript</button>
-              <button data-language="html" class="btn">HTML</button>
-              <button data-language="css" class="btn">CSS</button>
-            </div>
-          </div>
-        </div>
-    -->
+    
+         <!---------------------------------------------------------------->
         <div class="col-12 col-md-9">
             <div class="container">
                 <div class="row">
                    <div class="col-12">
                     <div class="card text-dark bg-light mb-3" style="width:100%">
                         <div class="card-body">
-                          <h5 class="card-title">Piscataway (7/22/2021) </h5>
-                          <p class="card-text">temp   <br> Wind  <br> Humidity   <br> UV Index  </p>
+                          <h5 class="card-title" id="currentCity&Dt" style="text-transform:uppercase"></h5> 
+                          <ul> 
+                            <li id="tempNow"></li>
+                            <li id="windNow"></li>
+                            <li id="humidityNow"></li>
+                            <li id="uvIndexNow"></li>
+                          </ul>
+                          
                         </div>
                       </div>
                   </div>
@@ -62,7 +55,13 @@
                  <div class="col-2"><div class="card text-dark bg-light mb-3 style=max-width: 18rem">
                       <div class="card-body">
                       <h5 class="card-title">Date</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <ul> 
+                        <li id="iconDay1"></li>
+                        <li id="tempDay1"></li>
+                        <li id="windDay1"></li>
+                        <li id="humidityDay1"></li>
+                      </ul>
+                    
                     </div>
                   </div> 
                 </div>
@@ -103,7 +102,7 @@
     </main>
    
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>   
 </body>
 
