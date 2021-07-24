@@ -1,9 +1,18 @@
 var cityName = document.querySelector('#cityname');
 console.log(cityName);
 
-
 var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
+
+
+$ (".citys").click(function() {
+    localStorage.setItem ("tasks1", cityName);
+    cityName = x;
+    document.getElementById("#cityname").innerHTML = cityName;
+    weatherdataFetchtoday();
+    weatherdataFetch5Days();
+});
+
 
 
 
@@ -22,6 +31,8 @@ function myFunction(event)  {
     
     cityContainerEl.appendChild(citylistEl);
    
+
+
     weatherdataFetchtoday();
     weatherdataFetch5Days();
     
@@ -29,7 +40,7 @@ function myFunction(event)  {
     var x = document.querySelector('#cityname').value;
     console.log(x);
 
-
+ 
     b = moment().format('L');
     var c = x + "   (  " + b + "  )"; 
     document.getElementById("currentCity&Dt").innerHTML = c; 
@@ -47,12 +58,13 @@ function weatherdataFetchtoday() {
     console.log(apiUrl0);
 
     fetch(apiUrl0).then(function(response0) {
-    response0.json().then(function(data0) {
-    console.log(data0);
 
+     response0.json().then(function(data0) {
+    console.log(data0);
+        
     var iconDay0El = document.querySelector('#iconDay0');    // <------------------------- adding image icon 
     var jpgImg0 = document.createElement('img');
-    var iconUrl0 = "http://openweathermap.org/img/w/" + data0.weather[0].icon + ".png";
+    var iconUrl0 = "https://openweathermap.org/img/w/" + data0.weather[0].icon + ".png";
     jpgImg0.setAttribute('src', iconUrl0);
     iconDay0El.innerHTML='';
     iconDay0El.appendChild(jpgImg0);
@@ -64,16 +76,40 @@ function weatherdataFetchtoday() {
     document.getElementById("tempNow").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
     document.getElementById("windNow").innerHTML = "Current Wind :  " + data0.wind.speed + " MPH" ; 
     document.getElementById("humidityNow").innerHTML = "Current Humidity : " + data0.main.humidity + " %" ; 
-   //   document.getElementById("uvIndexNow").innerHTML = data.list[0].main.temp ; 
+  
+// --------Getting longitude and Latitude values from apiUrl0 and passing on to OneCall Weather to get UVI index ---------- 
+    var longitude = data0.coord.lon;
+    console.log(longitude);
+    
+    var latitude = data0.coord.lat;
+    console.log(latitude);
 
+    var apiUrlUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=9d0a91c9414180869a1b366b5eca06bd";
+   console.log(apiUrlUV);
+
+    fetch(apiUrlUV).then(function(responseUV) {
+    responseUV.json().then(function(dataUV) {
+    console.log(dataUV);
+
+    var UVI = dataUV.current.uvi;
+    console.log(UVI);
+     if (UVI > 3 ) {
+        uvIndexNow.style.backgroundColor= "rgb(97, 211, 240)";
+     } else if (UVI < 6) {
+        uvIndexNow.style.backgroundColor= "rgb(218, 231, 31)";
+     } else {
+        uvIndexNow.style.backgroundColor= "rgb(245, 8, 8)";
+     }
+
+    document.getElementById("uvIndexNow").innerHTML = dataUV.current.uvi; 
+            })
+         }) 
      })
   })
 }
-
 //---function for Next 5 days forecast -------------------------------------------------
 //--------------------------------------------------------------------------------------
 function weatherdataFetch5Days() {
-
       
     var x = document.querySelector('#cityname').value;
     console.log(x);
@@ -95,7 +131,7 @@ function weatherdataFetch5Days() {
 
    var iconDay1El = document.querySelector('#iconDay1');
    var jpgImg1 = document.createElement('img');
-   var iconUrl1 = "http://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png";
+   var iconUrl1 = "https://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png";
    jpgImg1.setAttribute('src', iconUrl1);
    iconDay1El.innerHTML='';
    iconDay1El.appendChild(jpgImg1);
@@ -119,7 +155,7 @@ function weatherdataFetch5Days() {
 
    var iconDay2El = document.querySelector('#iconDay2');
    var jpgImg2 = document.createElement('img');
-   var iconUrl2 = "http://openweathermap.org/img/w/" + data.list[12].weather[0].icon + ".png";
+   var iconUrl2 = "https://openweathermap.org/img/w/" + data.list[12].weather[0].icon + ".png";
    jpgImg2.setAttribute('src', iconUrl2);
    iconDay2El.innerHTML='';
    iconDay2El.appendChild(jpgImg2);
@@ -142,7 +178,7 @@ function weatherdataFetch5Days() {
 
    var iconDay3El = document.querySelector('#iconDay3');
    var jpgImg3 = document.createElement('img');
-   var iconUrl3 = "http://openweathermap.org/img/w/" + data.list[20].weather[0].icon + ".png";
+   var iconUrl3 = "https://openweathermap.org/img/w/" + data.list[20].weather[0].icon + ".png";
    jpgImg3.setAttribute('src', iconUrl3);
    iconDay3El.innerHTML='';
    iconDay3El.appendChild(jpgImg3);
@@ -164,7 +200,7 @@ function weatherdataFetch5Days() {
   
    var iconDay4El = document.querySelector('#iconDay4');
    var jpgImg4 = document.createElement('img');
-   var iconUrl4 = "http://openweathermap.org/img/w/" + data.list[28].weather[0].icon + ".png";
+   var iconUrl4 = "https://openweathermap.org/img/w/" + data.list[28].weather[0].icon + ".png";
    jpgImg4.setAttribute('src', iconUrl4);
    iconDay4El.innerHTML='';
    iconDay4El.appendChild(jpgImg4);
@@ -187,7 +223,7 @@ function weatherdataFetch5Days() {
   
    var iconDay5El = document.querySelector('#iconDay5');
    var jpgImg5 = document.createElement('img');
-   var iconUrl5 = "http://openweathermap.org/img/w/" + data.list[36].weather[0].icon + ".png";
+   var iconUrl5 = "https://openweathermap.org/img/w/" + data.list[36].weather[0].icon + ".png";
    jpgImg5.setAttribute('src', iconUrl5);
    iconDay5El.innerHTML='';
    iconDay5El.appendChild(jpgImg5);
@@ -204,4 +240,6 @@ function weatherdataFetch5Days() {
     })
 }
 
-  
+
+btnStart.addEventListener('click', hidePage1);
+

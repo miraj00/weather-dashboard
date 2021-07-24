@@ -129,7 +129,7 @@ h2.card-title {
   padding-top: 40px;
 }
 
-h2.card-title, .card-title, #iconDay0, #tempNow, #windNow, #humidityNow {
+h2.card-title, .card-title, #iconDay0, #tempNow, #windNow, #humidityNow, #uvIndexNow, #uvText {
   font-weight: bold;
 }
 
