@@ -5,13 +5,14 @@ var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
 
 
-$ (".citys").click(function() {
+citys.addEventListener('click', myFunction()); 
+  myFunction() {
     localStorage.setItem ("tasks1", cityName);
     cityName = x;
     document.getElementById("#cityname").innerHTML = cityName;
     weatherdataFetchtoday();
     weatherdataFetch5Days();
-});
+}
 
 
 
@@ -241,5 +242,5 @@ function weatherdataFetch5Days() {
 }
 
 
-btnStart.addEventListener('click', hidePage1);
+
 
