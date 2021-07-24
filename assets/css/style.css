@@ -96,3 +96,30 @@ header {
   li {
     list-style-type: none;
 }
+
+#day1Date, #day2Date, #day3Date, #day4Date, #day5Date {
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+}
+#tempDay1, #tempDay2, #tempDay3, #tempDay4, #tempDay5  {
+  color: white;
+}
+#windDay1, #windDay2, #windDay3, #windDay4, #windDay5 {
+  color: white;
+}
+#humidityDay1, #humidityDay2, #humidityDay3, #humidityDay4, #humidityDay5 {
+  color: white;
+}
+
+
+
+
+div.card-body {
+  background-color: rgb(159, 166, 184);
+}
+
+.card-title, #iconDay0, #tempNow, #windNow, #humidityNow {
+  font-weight: bold;
+
+}
