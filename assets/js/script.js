@@ -8,6 +8,7 @@ var x = document.querySelector('#cityname').value;
 console.log(x);
 
 
+
 //--------------Function that saves searched city in local storage and add in the list of a search history 
 // ( so upon clicking it it will fetch data of that city ) - ---------------------------------------------------------------------------------------
 function myFunction(event)  {
@@ -33,7 +34,7 @@ function weatherdataFetch() {
     var x = document.querySelector('#cityname').value;
     console.log(x);
 
-         // adds today's date next to city name ------------------------
+           // adds today's date next to city name ------------------------
          b = moment().format('L');
          var c = x + "   (  " + b + "  )"; 
          document.getElementById("currentCity&Dt").innerHTML = c; 
