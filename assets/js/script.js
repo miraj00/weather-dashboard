@@ -2,25 +2,33 @@ var cityName = document.querySelector('#cityname');
 console.log(cityName);
 var cityContainerEl = document.querySelector("#citylistContainer");
 var cityIdCounter = 0;
-var cityClickedName = document.querySelector ("#city-id");
+var cityClickedName = document.querySelector ("#city-id[i]");
 //--------------------------------------------------------------------------------------------------
 
 // upon clicking history tab, city name from it gets added to input field and button click function proceeds-----
 
 cityContainerEl.addEventListener('click', updateFunction);
 
-function updateFunction() {
+function updateFunction(event) {
 
+    
 
     // Selecting the input element and get its value 
-    var inputVal = document.getElementById("city-id").value;
-    
+    // var inputVal = document.getElementById('city-id').value;
+    //let textContent = document.querySelector('cityContainerEl').innerText;
+   // var textContent = document.getElementById('cityContainerEl').value;
+
+   var inputVal = event.target.getAttribute("city-id");
+    console.log(inputVal);
+
+    var inputVal2 = event.target.getAttribute("city-id").value;
+    console.log(inputVal2);
+
     localStorage.setItem ("cityHx", inputVal);
     var inputVal2 = localStorage.getItem("cityHx");
     document.getElementById("cityname").innerHTML = inputVal2;
-    
-    // Displaying the value
-    
+   
+     
 }
 
 
@@ -35,7 +43,7 @@ function updateFunction() {
 function myFunction(event)  {
     event.preventDefault(); 
 
-// Store city name in local storage and add in the list of a search history ( so upon clicking it it will fetch data of that city ) --------------------
+ // Store city name in local storage and add in the list of a search history ( so upon clicking it it will fetch data of that city ) --------------------
     localStorage.setItem ("city", cityName.value);
 
     var citylistEl = document.createElement("li");
@@ -70,7 +78,7 @@ function weatherdataFetch() {
 
     fetch(apiUrl0).then(function(response0) {
 
-     response0.json().then(function(data0) {
+    response0.json().then(function(data0) {
     console.log(data0);
         
     var iconDay0El = document.querySelector('#iconDay0');    // <------------------------- adding image icon 
@@ -229,11 +237,16 @@ function weatherdataFetch() {
    document.getElementById("tempDay5").innerHTML = "Temp :  " + t5fixed + " *F" ; 
    document.getElementById("windDay5").innerHTML = "Wind :  " + data1.daily[5].wind_speed + " MPH"; 
    document.getElementById("humidityDay5").innerHTML = "Humidity : " + data1.daily[5].humidity + " %" ; 
-      
-           })
-        }) 
-     })
-  })
+   
+   cityName.value="";
+
+  
+          
+    }) 
+    })
+    })
+})
+
 }
 
 
