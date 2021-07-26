@@ -53,6 +53,16 @@ function weatherdataFetch() {
 
     response0.json().then(function(data0) {
     console.log(data0);
+
+
+  var badRequest = data0.cod[0]; 
+  console.log (pp);
+     if ( badRequest == 400 || 401 || 403 || 404 || 405 ) {
+           alert("Please enter city name spelled corretly to continue");
+           location.reload();
+         
+         }
+
         
     var iconDay0El = document.querySelector('#iconDay0');    // <------------------------- adding image icon 
     var jpgImg0 = document.createElement('img');
