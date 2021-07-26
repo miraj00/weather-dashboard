@@ -88,7 +88,7 @@ function weatherdataFetch() {
         uvIndexNow.style.backgroundColor= "rgb(245, 8, 8)";
      }
 
-    document.getElementById("uvIndexNow").innerHTML = data1.current.uvi; 
+    document.getElementById("uvIndexNow").innerHTML = "Current UV Index :" + data1.current.uvi; 
 
 //------------------------------------------------ Next 5 days forecast -------------------------------------------------
 
@@ -282,7 +282,7 @@ function updateFunction(event) {
          uvIndexNow.style.backgroundColor= "rgb(245, 8, 8)";
       }
  
-     document.getElementById("uvIndexNow").innerHTML = data1.current.uvi; 
+     document.getElementById("uvIndexNow").innerHTML = "Current UV Index :" + data1.current.uvi; 
  
  //------------------------------------------------ Next 5 days forecast -------------------------------------------------
  

@@ -171,50 +171,65 @@ div.card-body {
   width: 100%;
 }
 
+@media screen and (max-width: 991px){
+  .form-label {
+    font-size: 1.2rem;
+
+  }    
+}
+
+@media screen and (max-width: 991px){
+  .form-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+} 
+.btn {
+  font-size: 1.2rem;
+}
+}
 
 @media screen and (max-width: 575px){
-header  {
-  width : 80%;
-  margin-left: 40px; 
-  height: 40px;
-}
-h1 {
-  font-size: 25px;
-  padding-top: 7px;
-}
-div.card-body-1 {
-  height: 200px;
-}
-
-div.card-body {
-  height: 200px;
-}
-
-.flex-row {
-  display:unset;
-  flex-wrap: wrap;
-}
-
-div.col-3 {
-  padding-left:0px;
-}
-
-div.col-9  {
-  width: 40%;
-}
-
-.form-label {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0 0 0 0px;
-}
-.btn {
-  font-size: 1rem;
-}
-div.card-body {
-font-size: 3px;
-}
-.h2, h2 {
-  font-size: 1rem;
-}
+  header  {
+    width : 80%;
+    margin-left: 40px; 
+    height: 40px;
+  }
+  h1 {
+    font-size: 25px;
+    padding-top: 7px;
+  }
+  div.card-body-1 {
+    height: 200px;
+  }
+  
+  div.card-body {
+    height: 200px;
+  }
+    
+  div.col-3 {
+    padding-left:0px;
+  }
+  
+  div.col-9  {
+    width: 40%;
+  }
+  
+  .form-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0 0 0 0px;
+  }
+ 
+  .btn {
+    font-size: 1rem;
+  }
+ 
+  div.card-body {
+  font-size: 3px;
+  }
+ 
+  .h2, h2 {
+    font-size: 1rem;
+  }
+  
 }
