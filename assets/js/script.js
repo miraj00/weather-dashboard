@@ -34,6 +34,12 @@ function weatherdataFetch() {
     var x = document.querySelector('#cityname').value;
     console.log(x);
 
+    if ( x == "" ) {
+      alert("Please enter city name to continue");
+      location.reload();
+  
+      }
+
            // adds today's date next to city name ------------------------
          b = moment().format('L');
          var c = x + "   (  " + b + "  )"; 
