@@ -57,7 +57,7 @@ function weatherdataFetch() {
    //--- if it's a bad request, it will alert user and refresh the page ----------------------------
   var badRequest = data0.cod; 
   console.log (badRequest);
-     if ( badRequest == 400 || 401 || 403 || 404 || 405 ) {
+     if ( badRequest == 400 || badRequest == 401 || badRequest == 403 || badRequest == 404 || badRequest == 405 ) {
            alert("Please enter city name spelled corretly to continue");
            location.reload();
          }
