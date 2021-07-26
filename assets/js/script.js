@@ -34,13 +34,13 @@ function weatherdataFetch() {
     var x = document.querySelector('#cityname').value;
     console.log(x);
 
+    //------ if city input is blank, it will alert user ------------------------------
     if ( x == "" ) {
       alert("Please enter city name to continue");
       location.reload();
-  
-      }
+        }
 
-           // adds today's date next to city name ------------------------
+         // adds today's date next to city name ------------------------
          b = moment().format('L');
          var c = x + "   (  " + b + "  )"; 
          document.getElementById("currentCity&Dt").innerHTML = c; 
@@ -54,13 +54,12 @@ function weatherdataFetch() {
     response0.json().then(function(data0) {
     console.log(data0);
 
-
-  var badRequest = data0.cod[0]; 
-  console.log (pp);
+   //--- if it's a bad request, it will alert user and refresh the page ----------------------------
+  var badRequest = data0.cod; 
+  console.log (badRequest);
      if ( badRequest == 400 || 401 || 403 || 404 || 405 ) {
            alert("Please enter city name spelled corretly to continue");
            location.reload();
-         
          }
 
         
